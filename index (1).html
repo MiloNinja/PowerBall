@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Ball</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://sdmntprwestus.oaiusercontent.com/files/00000000-6644-6230-b19f-74f6e5e73bf2/raw?se=2025-04-12T17%3A04%3A57Z&sp=r&sv=2024-08-04&sr=b&scid=ba14a489-4151-5b94-bd6b-ab8894c4c9ec&skoid=acefdf70-07fd-4bd5-a167-a4a9b137d163&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-12T10%3A20%3A32Z&ske=2025-04-13T10%3A20%3A32Z&sks=b&skv=2024-08-04&sig=gnDQ7XRXN6XbjrRkS5%2BNrk/zpmEWq2paPFQ1YMW1cTk%3D');
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            color: white;
+            height: 150px;
+        }
+        button {
+            padding: 15px;
+            font-size: 18px;
+            background-color: #f4c542;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #333;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #e0a93c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Power Ball</h1>
+        <textarea id="noteText" placeholder="Write your note here..."></textarea>
+        <button onclick="saveNote()">Save and Continue</button>
+    </div>
+
+    <script>
+        // Check if there's a note saved in localStorage
+        window.onload = function() {
+            const savedNote = localStorage.getItem('note');
+            if (savedNote) {
+                document.getElementById('noteText').value = savedNote;
+            }
+        }
+
+        // Save the note to localStorage
+        function saveNote() {
+            const note = document.getElementById('noteText').value;
+            localStorage.setItem('note', note);
+            alert('Note saved successfully!');
+        }
+    </script>
+</body>
+</html>
